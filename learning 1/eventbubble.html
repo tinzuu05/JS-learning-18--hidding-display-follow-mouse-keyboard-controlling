@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event bubble</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script>
+		window.onload=function()
+		{
+			var oBtn=document.getElementById('btn1')
+			var oDiv=document.getElementById('div1')
+
+			oBtn.onclick=function(ev)
+			{
+				var oEvent=ev||event;
+
+				oDiv.style.display='block';
+
+				oEvent.cancelBubble=true;
+
+			}
+
+			document.onclick=function()
+			{
+				oDiv.style.display='none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<input id="btn1" type="button" value="display">
+	<div id="div1" class="div1">
+</body>
+</html>
